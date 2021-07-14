@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+   <div class="row">
+      <div class="col-md-12">
+         <div id="content" class="content content-full-width">
+            <!-- begin profile -->
+            
+            <!-- end profile -->
+            <!-- begin profile-content -->
+            <div class="profile-content">
+               <!-- begin tab-content -->
+               <div class="tab-content p-0">
+                  <!-- begin #profile-friends tab -->
+                  <div class="tab-pane fade in active show" id="profile-friends">
+                     <h4 class="m-t-0 m-b-20">Friend List </h4>
+                     <form action="/searchfriend" method="POST">
+                        <input type="text" id = "livebox" name= "friendname" placeholder="Looking for new friends?">
+                           <p id = "datalist"></p>
+                       </form>
+                     <!-- begin row -->
+                     <div class="row row-space-2">
+                        
+                        <!-- begin col-6 -->
+                        {% if friends!='NULL'%}
+                        <h3>My Friends!!</h3>
+                        <table class="table table-hover table-stripped table-borderless">
+                           <thead class="thead-dark">
+                           <tr>
+                             <th>Friend Name</th>
+                             <th>Friend Username</th>
+                             <th>BookShelf</th>
+                           </tr>
+                        {% for friend in friends %}
+
+                        <tr>
+                           <td>{{friend['name']}}</td>
+                           <td>{{friend.user_id}}</td>
+                           <td>
+                              <form action="/friends", method="POST">
+                                 <div class="media-body valign-middle">
+                                    <input type = "hidden" name = "friendname" value = {{friend["name"]}} />
+                                    <input type = "hidden" name = "friendid" value = {{friend['user_id']}} />
+                                    <button type="submit" >Go to shelf </button>
+                                 </div>
+                                 </form>
+                           </td>
+                         </tr>
+                        <div class="col-md-6 m-b-2">
+                           <div class="p-10 bg-white">
+                              <div class="media media-xs overflow-visible">
+                                 <!--<a class="media-left" href="javascript:;">
+                                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="media-object img-circle">
+                                 </a>-->
+                                 
+                              
+                              </div>
+                           </div>
+                        </div>
+                        {%endfor%}
+                        {% else %}
+                        <div class="media-body valign-middle">
+                           <b class="text-inverse">You dont have any friends!</b>
+                        </div>
+                        {% endif %}                       
+                        <!-- end col-6 -->
+                    </div>
+                    
+                     <!-- end row -->
+                  </div>
+                  <!-- end #profile-friends tab -->
+               </div>
+               <!-- end tab-content -->
+            </div>
+            <!-- end profile-content -->
+         </div>
+      </div>
+   </div>
+</div>
+{% endblock %} 
+
+

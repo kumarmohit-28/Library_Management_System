@@ -1,0 +1,119 @@
+.jumbotron h1{
+    color: black
+}
+
+.jumbotron h2{
+    color: #e24a0e
+}
+
+  .navbar {
+    border-bottom: #e24a0e 3px solid;
+    opacity: 1; 
+  }
+  
+  .container {
+    font-size: 1.3rem;
+  }
+
+  /* tr:nth-child(even) {background-color: #e0a188;}
+  tr:nth-child(odd) {background-color: #ffa17c;} */
+  
+.bg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+}
+
+.bg::after {
+  content: "";
+  background: url('/static/images/returnbook.png') ;
+  opacity: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+
+.mt-25{
+  margin-top: 25px;
+}
+
+/*
+  .btn-primary-outline {
+    background-color: #ffffff;
+    border-color: rgb(17, 21, 252);
+  }
+
+  .btn-submit-outline {
+    background-color: #ffffff;
+    border-color: rgb(17, 21, 252);
+  }
+  
+  .uploader-input {
+    background: #fff;
+    color: #696969;
+    font-size: 1rem;
+  }
+  
+  .form-check-label {
+    font-size: 1rem;
+    color: #a9a9a9;
+  } */
+  
+  
+  
+  /* 
+  
+  #home-section {
+    background: url("../img/home.jpg") no-repeat;
+    min-height: 700px;
+    background-size: cover;
+    background-attachment: fixed; 
+  }
+  
+  #home-section .dark-overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      min-height: 700px; 
+    }
+    
+  #home-section .home-inner {
+    padding-top: 150px; 
+  }
+  
+  #home-section .card-form {
+    opacity: 0.8;
+  }
+  
+  #home-section .fas {
+    color: #008ed6;
+    background: #fff;
+    padding: 4px;
+    border-radius: 5px;
+    font-size: 30px; 
+  }
+  
+  #explore-section .fas, #share-section .fas {
+    color: #fff;
+    background: #333;
+    padding: 4px;
+    border-radius: 5px;
+    font-size: 30px; 
+  }
+  
+  #create-section .fas {
+    color: #008ed6;
+    background: #fff;
+    padding: 4px;
+    border-radius: 5px;
+    font-size: 30px; 
+  } 
+  */

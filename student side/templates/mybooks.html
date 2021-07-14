@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<body background = "{{ url_for('static', filename='images/try.jpeg')}}" background-size:100px 100px;>
+  <br>
+  <h1>Book Info </h1>
+
+  <br>
+  <h3>Book Status</h3>
+  <table class="table table-hover table-stripped table-borderless">
+    <thead class="thead-dark">
+    <tr>
+      <th>Book Name</th>
+      <th>ISBN NO</th>
+      <th>Issue Date</th>
+      <th>Status</th>
+    </tr>
+
+    {% for s in bookstatus %}
+      <tr>
+        <td><a href = "/bookdetails/{{s['isbn_no']}}">{{s.title}}</a></td>
+        <td>{{s.isbn_no}}</td>
+        <td>{{s.issue_data}}</td>
+        <td>{{s.status}}</td>
+      </tr>
+    {% endfor %}
+
+  </table>
+  <br>
+  <br>
+  <!--<form action="/searchfriend" method="POST">
+    <input type="text" id = "livebox" name= "friendname">
+       <p id = "datalist"></p>
+   </form>-->
+
+   <h3>Hold Requests</h3>
+  <table class="table table-hover table-stripped table-borderless">
+    <thead class="thead-dark">
+    <tr>
+      <th>Book Name</th>
+      <th>ISBN NO</th>
+      <th>Book ID</th>
+      <th>Request Date</th>
+    </tr>
+
+    {% for r in holdrequest %}
+      <tr>
+        <td><a href = "/bookdetails/{{r['isbn_no']}}">{{r.title}}</a></td>
+        <td>{{r.isbn_no}}</td>
+        <td>{{r.book_id}}</td>
+        <td>{{r.req_date}}</td>
+      </tr>
+    {% endfor %}
+
+  </table>
+
+  
+
+
+
+{% endblock %}

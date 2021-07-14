@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class= "bg" >
+    <h1>Return Books</h1>
+
+  <div class="container">
+
+  <hr>
+
+    <div class="row">
+      <div class="col-12 text-center">
+        <a class="btn btn-success " href="/issue_books"> Issue books </a>
+        <a class="btn btn-success " href="/return_books"> Return books </a>
+        <a class="btn btn-success " href="/pay_fine"> Pay Fine </a>
+      </div>
+    </div>
+  <table class="table table-hover table-stripped">
+    <tr>
+      <th>Student Username</th>
+      <th>FINE</th>
+    </tr>
+<!-- fine for each - button -->
+    {% for book in books %}
+      <tr>
+        <td>{{book.studentUsername}}</td>
+        <td>{{book.fine}}</td>
+      </tr>
+    {% endfor %}
+
+  </table>
+  </div>
+</div>
+{% endblock %}

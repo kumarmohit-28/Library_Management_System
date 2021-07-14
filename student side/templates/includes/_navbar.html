@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+  <a class="navbar-brand" href="/about">Library Management System</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <!-- <li class="nav-item active">
+        <a class="nav-link" href="/about">About</a>
+      </li> -->
+      <li class="nav-item active">
+        <a class="nav-link" href="/bookslist">Books list</a>
+      </li>
+      <!-- <li class="nav-item active">
+        <a class="nav-link" href="/bloodbank">Blood Bank</a>
+      </li> -->
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      {% if session.logged_in %}
+      <li class="nav-item active">
+        <a class="nav-link" href="/mybooks">My Books</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/student_detail">Personal Details</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/suggestions">Suggestions</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/friends">Friends</a>
+      </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/logout">Logout</a>
+        </li>
+      
+      {% else %}
+        <li class="nav-item active">
+          <a class="nav-link" href="/register">Register</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/login">Student/Faculty Login</a>
+        </li>
+      {% endif %}
+
+      
+    </ul>
+  </div>
+</nav>

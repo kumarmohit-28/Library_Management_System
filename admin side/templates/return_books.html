@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<!-- <body background = "{{ url_for('static', filename='images/returnbook.png')}}" background-size:100px 100px;> -->
+
+  <div class= "bg" >
+    <h1>Return Books</h1>
+
+    {% from "includes/_formhelpers.html" import render_field %}
+
+    <form method="POST" action="">
+      <div class="form-group">
+        {{render_field(form.studentUsername, class_="form-control")}}
+      </div>
+      <label>
+        Enter the Book name to be returned
+      </label>
+      <div class="form-group">
+      <select id = "book_name" name= "book_name" class=" form-control">
+      {% for book in books %}
+        <option>
+          {{book.title}}
+        </option>
+      {% endfor %}
+      </select>
+      </div>
+
+      
+        <input type="submit" class="btn btn-primary" value="Submit">
+        <a class="btn btn-primary" style="float: right;" href="/pay_fine"> Pay Fine </a>
+  
+    </form>
+
+
+  </div>
+ 
+
+
+{% endblock %}

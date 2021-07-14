@@ -1,0 +1,78 @@
+{% extends 'layout.html' %}
+
+
+
+{% block body %}
+  <h1>Profile</h1>
+
+  
+<br>
+
+<table class="table table-hover table-stripped table-borderless">
+  <thead class="thead-dark">
+  <tr>
+    <th>Your pending fine is:  {{profile.unpaid_fines}}₹</th>
+  </tr>
+</table>
+
+<table class="table table-hover table-stripped table-borderless">
+  <thead class="thead-dark">
+<tr>
+  <th style="width: 250px; text-align: center; background-color:darkslategrey;">Name: </th>
+  <td>{{profile['name']}}</td>
+</tr>
+
+<table class="table table-hover table-stripped table-borderless">
+  <thead class="thead-dark">
+<tr>
+  <th style="width: 250px; text-align: center; background-color:darkslategrey;">User type: </th>
+  <td>{{profile.user_type}}</td>
+</tr>
+
+<table class="table table-hover table-stripped table-borderless">
+  <thead class="thead-dark">
+<tr>
+  <th style="width: 250px; text-align: center; background-color:darkslategrey;">Email:</th>
+  <td>{{profile.email}}</td>
+</tr>
+
+<table class="table table-hover table-stripped table-borderless">
+  <thead class="thead-dark">
+<tr>
+  <th style="width: 250px; text-align: center; background-color:darkslategrey;">User Id:</th>
+  <td>{{profile.user_id}}</td>
+</tr>
+
+<table class="table table-hover table-stripped table-borderless">
+  <thead class="thead-dark">
+<tr>
+  <th style="width: 250px; text-align: center; background-color:darkslategrey;">Address: </th>
+  <td>{{profile.address}}</td>
+</tr>
+
+ 
+    
+      <!-- <a>{{profile['name']}}</a>
+
+      <div class="form-group">
+        <a>{{profile.user_type}}</a>
+      </div>
+ 
+    <div class="form-group">
+      <a>{{profile.email}}</a>
+    </div>
+    <div class="form-group">
+      <a>{{profile.user_id}}</a>
+    </div>    
+    <div class="form-group">
+      <a>{{profile.address}}</a>
+    </div>
+    <div class="form-group">
+      <a>{{profile.unpaid_fines}}</a>
+    </div> -->
+   
+  
+
+
+
+{% endblock %}

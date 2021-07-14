@@ -1,0 +1,66 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+   <div class="row">
+      <div class="col-md-12">
+         <div id="content" class="content content-full-width">
+            <!-- begin profile -->
+            
+            <!-- end profile -->
+            <!-- begin profile-content -->
+            <div class="profile-content">
+               <!-- begin tab-content -->
+               <div class="tab-content p-0">
+                  <!-- begin #profile-friends tab -->
+                  <div class="tab-pane fade in active show" id="profile-friends">
+                     <h4 class="m-t-0 m-b-20">Friend List</h4>
+                     <!-- begin row -->
+                     <div class="row row-space-2">
+                        <!-- begin col-6 -->
+                        {% if friendid!='NULL'%}
+                        <form action="/searchfriend" method="POST">
+                            <div class="col-md-6 m-b-2">
+                               <div class="p-10 bg-white">
+                                  <div class="media media-xs overflow-visible">
+                                     <a class="media-left" href="javascript:;">
+                                     <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="media-object img-circle">
+                                     </a>
+                                     
+                                     <div class="media-body valign-middle">
+                                        <b class="text-inverse" >{{name}}</b>
+                                        <input type = "hidden" name = "name" value = {{name}} />
+                                        <b class="text-inverse">{{friendid}}</b>
+                                        <input type = "hidden" name = "friendid" value = {{friendid}} />
+                                     </div>
+                                     <div class="media-body valign-middle text-right overflow-visible">
+                                        <div class="btn-group dropdown">
+                                          <button type="submit" name="sendfriendrequest" value={{status}}> {{status}} </button>
+                                         
+                                           
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                            </form>
+                            {%else%}
+                            <div class="media-body valign-middle">
+                              <b class="text-inverse">There is no user with this name!</b>
+                           </div>
+                           {%endif%}
+                        <!-- end col-6 -->
+                    </div>
+                     <!-- end row -->
+                  </div>
+                  <!-- end #profile-friends tab -->
+               </div>
+               <!-- end tab-content -->
+            </div>
+            <!-- end profile-content -->
+         </div>
+      </div>
+   </div>
+</div>
+{% endblock %}

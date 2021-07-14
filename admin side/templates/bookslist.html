@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<body background = "https://images.pexels.com/photos/48126/books-education-school-literature-48126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></body>
+  <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+          <br>
+          <h1>Books List </h1>
+          <br>
+        </div>
+
+        <div class="col-md-4">
+          <div class="row">
+             <img src= "{{ url_for('static', filename='images/fine.png') }}" class="center-block" width="100" height="100" >  
+          </div>
+          <div>
+             <a href="/check_fine" >Check fines </a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <img src= "{{ url_for('static', filename='images/analyse.jpeg') }}" class="center-block" width="100" height="100" >
+          </div>
+          <div class="row">
+            <a href="/analyse" >Analysis</a>
+          </div>
+        </div>
+    </div>
+  
+
+    <!-- <div class = "row align-items-center justify-content-center mt-25">
+    <form method="POST" >
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit" ><i class="fa fa-search"></i></button>
+    </form>
+    </div> -->
+  </div>
+  
+  <br>
+  <br>  
+
+  <table class="table table-hover table-stripped table-borderless">
+    <thead class="thead-dark">
+    <tr>
+      <th>Book_Id</th>
+      <th>Book Name</th>
+      <th>Currently Available</th>
+      <th>          </th>
+    </tr>
+
+    {% for book in books %}
+      <tr>
+        <td>{{book.book_id}}</td>
+        <td>{{book.title}}</td>
+        <td> {{book.available}} </td>
+        {% if book.available > 0 %}
+          <td><a class="btn btn-success" href="issue_books/{{book.title}}"> Issue book </a></td>
+        {% else %}
+          <td>  </td>
+        {% endif%}
+      </tr>
+    {% endfor %}
+
+  </table>
+
+{% endblock %}

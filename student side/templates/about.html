@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<body background="{{ url_for('static',filename='images/bg_home.jpeg') }}">
+
+<div class="jumbotron text-center">
+  <h1>About Us</h1>
+  <h2><p class="font-weight-bold">Library Management System</p></h2>
+  
+  <br>
+  <p class="lead text-justify">
+    It is indispensable to maintain an efficient software that records details related to library activities such as information about members, books and staff, and also payment of due fine accordingly etc. The software keeps a record of details of members, books and safely maintains the database. We have to design a software to implement Library System Management. Our aim is to design such a software to record all such information and to access them in simple way.
+    The members can
+    <br>
+    1. Issue a Book
+    <br>
+    <!-- The member can issue a book if its available. He has to verify his authority by entering his id. A member can also search different books. One member can issue only one book at a time.
+    <br> -->
+    2. Return a Book
+    <br>
+    <!-- The member has to return the book within one week of issue, do the payments and update the database.
+    <br> -->
+    3. Search for a book
+    <br>
+    <!-- Search in the given database if the book is available
+    <br> -->
+    4. Request a book
+    <br>
+    <!-- In case, book needed is not available at a given time then users can queue, and once a copy is made available then user requesting it is serviced
+    <br> -->
+    5. Update the system library
+    <br>
+    <!-- Add newly bought books to the database
+    <br> -->
+    6. Calculate fine
+    <br>
+    <!-- Calculate the fine based on the due date
+    <br> -->
+    
+</div>
+{% endblock %}

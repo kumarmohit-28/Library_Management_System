@@ -1,0 +1,35 @@
+<!DOCTYPE = html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Library Management </title>
+
+    <link rel="icon" href="https://www.freepngimg.com/download/book/13-books-png-image-with-transparency-background.png" type="image/gif" sizes="16x16">
+    <link rel= "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/base.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    {% block head %} {% endblock %}
+
+  </head>
+  <!-- <body background = "https://images.pexels.com/photos/48126/books-education-school-literature-48126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"> -->
+
+    {% include "includes/_navbar.html" %}
+    <div class="container">
+
+        {% include 'includes/_messages.html' %}
+
+        {% block body %} {% endblock %}
+    </div>
+
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
+    </script>
+    <script src="//cdn.ckeditor.com/4.9.0/standard/ckeditor.js"></script>
+    <script type="text/javascript">
+      CKEDITOR.replace('editor')
+    </script>
+  </body>
+</html>

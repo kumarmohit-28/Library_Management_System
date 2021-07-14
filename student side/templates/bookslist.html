@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% block body %}
+<body background = "{{ url_for('static', filename='images/try.jpeg')}}" background-size:100px 100px;>
+  <br>
+  <h1>Books List </h1>
+  <br>
+  <div class="container">
+    <div class="card text-center" id="wrapper">
+        <div class="card-header">Looking for Something?</div>
+        <div class="card-body">
+            <form action="{{ url_for('bookslist') }}" method="post">
+                <input class="form-control" name="searchbox" type="text" placeholder="Title, ISBN, Author ...">
+                <br>
+                <button type="submit" class="btn btn-primary" style="width:100%;"> Search </button>
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+  <!--<form action="/searchfriend" method="POST">
+    <input type="text" id = "livebox" name= "friendname">
+       <p id = "datalist"></p>
+   </form>-->
+  <table class="table table-hover table-stripped table-borderless">
+    <thead class="thead-dark">
+    <tr>
+      <th>Book Name</th>
+      <th>ISBN NO</th>
+      <th>Author Name</th>
+      <th>Availability Status</th>
+    </tr>
+
+    {% for book in books %}
+      <tr>
+        <td><a href = "/bookdetails/{{book['isbn_no']}}">{{book.title}}</a></td>
+        <td>{{book.isbn_no}}</td>
+        <td>{{book.author_name}}</td>
+        <td>{{book.book_status}} copies available</td>
+      </tr>
+    {% endfor %}
+
+  </table>
+
+{% endblock %}

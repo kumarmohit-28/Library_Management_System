@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<body background = "{{ url_for('static', filename='images/finePage.jpg')}}" opacity= 0.2></body>
+<h1>Pay Fine</h1>
+
+  {% from "includes/_formhelpers.html" import render_field %}
+
+  <form method="POST" action="">
+    <div class="form-group">
+      {{render_field(form.studentUsername, class_="form-control")}}
+    </div>
+    <div>
+      <!-- Click here to know student's pending amount<br> -->
+      <input type="submit" class="btn btn-primary" name="cal"  value="Calculate Fine">
+      <br>
+      <br>
+      <strong>Student has a pending of Rs.{{data.unpaid_fines}}</strong> <br>
+      <br>
+
+      Enter the amount paid by the student
+      {{render_field(form.amountpaid, class_="form-control")}}
+      <br>
+      <input type="submit" class="btn btn-primary" name="pay"  value="Pay Fine">
+    </div>
+  </form>
+  <div>
+  <strong>Student paid a fine of Rs.{{newfine}} </strong>
+  </div>
+  
+{% endblock %}

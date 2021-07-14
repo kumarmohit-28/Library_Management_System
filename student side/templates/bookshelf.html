@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+{% if books!= 'NULL'%}
+<div id="large-th">
+    <div class="container">
+      <h1>{{books['name']}}</h1>
+      <br>
+      <div class="choose">
+        <a href="#list-th"><i class="fa fa-th-list" aria-hidden="true"></i></a>
+        <a href="#large-th"><i class="fa fa-th-large" aria-hidden="true"></i></a>
+      </div>
+      <div id="list-th">
+        {% for book in books %}
+        <div class="book read">
+          <div class="cover">
+            <img src="https://s-media-cache-ak0.pinimg.com/564x/f9/8e/2d/f98e2d661445620266c0855d418aab71.jpg">
+          </div>
+          <div class="description">
+            <a href="/bookdetails/{{book['isbn_no']}}" >{{book["title"]}}</a>       
+          </div>
+        </div>
+        {%endfor%}
+      </div>
+    </div>
+  </div>
+  {%else%}
+  <h1>Your friend doesnt have any book!!</h1>
+  {%endif%}
+{% endblock %}
